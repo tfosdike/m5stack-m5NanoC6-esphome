@@ -1,0 +1,17 @@
+text_sensor:
+  - platform: wifi_info
+    ip_address:
+      name: "My IP Address"
+      id: ${name}_my_ip_address
+    mac_address:
+      name: "My Mac Wifi Address"
+      id: ${name}_my_mac_wifi_address
+    ssid:
+      name: "Connected SSID"
+      id: ${name}_connected_ssid
+    bssid:
+      name: "Connected BSSID"
+      id: ${name}_connected_bssid
+    dns_address:
+      name: "DNS Address"
+      id: ${name}_dns_address

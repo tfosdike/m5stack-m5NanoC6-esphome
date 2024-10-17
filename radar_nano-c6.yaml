@@ -1,0 +1,11 @@
+substitutions:
+  LOCATION: "room_name"
+  name: "radar_${LOCATION}"
+  friendly_name: "radar_${LOCATION}"
+
+<<: !include packages/generic_m5stack-nano-c6.yaml
+#######################################################
+wifi:
+  ssid:        !secret wifi_ssid
+  password:    !secret wifi_password
+#######################################################

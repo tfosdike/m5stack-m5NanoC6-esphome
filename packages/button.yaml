@@ -1,0 +1,5 @@
+button:
+  - platform: safe_mode
+    name: "Safe Mode Boot"
+    entity_category: diagnostic
+    id: ${name}_safe_mode_boot

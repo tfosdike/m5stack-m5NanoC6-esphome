@@ -1,0 +1,9 @@
+# Configuration of M5 Atom Lite onboard onboard button
+binary_sensor:
+  - platform: gpio
+    name: "Button"
+    id: m5stack_button
+    pin:
+      number: GPIO9
+      inverted: true
+

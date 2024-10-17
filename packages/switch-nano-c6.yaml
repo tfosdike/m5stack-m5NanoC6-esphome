@@ -1,0 +1,15 @@
+switch:
+  - platform: factory_reset
+    name: "Restart with Factory Default Settings"
+    entity_category: "diagnostic"
+
+  - platform: restart
+    name: "Restart"
+
+  - platform: gpio
+    pin: GPIO7
+    name: "on board LED"
+
+  - platform: gpio
+    pin: GPIO19
+    name: "RGB on/off"

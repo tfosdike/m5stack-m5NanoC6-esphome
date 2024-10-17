@@ -1,0 +1,56 @@
+#######################################################
+esphome:
+  name: ${name}
+  friendly_name: "${friendly_name}"
+  name_add_mac_suffix: false
+  comment: "M5stack c6 generic test"
+  platformio_options:
+    platform: https://github.com/platformio/platform-espressif32/archive/refs/tags/v6.7.0.zip
+    board_build.f_cpu: 160000000L
+    board_build.f_flash: 80000000L
+    board_build.flash_size: 4MB
+    build_flags: "-DBOARD_HAS_PSRAM"
+    board_build.arduino.memory_type: qio_opi
+
+esp32:
+  board: esp32-c6-devkitm-1
+  variant: esp32c6
+  framework:
+    type: esp-idf
+    version: 5.2.1
+    sdkconfig_options:
+      CONFIG_ESPTOOLPY_FLASHSIZE_4MB: y
+
+ota:
+  platform: esphome
+  password: !secret ota_password
+
+api:
+
+logger:
+  level: DEBUG
+
+bluetooth_proxy:
+  active: true
+
+esp32_improv:
+  authorizer: m5stack_button
+
+# esp32_ble_tracker:
+#   scan_parameters:
+#     active: false
+remote_transmitter:
+  pin: GPIO3
+  # Infrared remotes use a 50% carrier signal
+  carrier_duty_percent: 50%
+  rmt_channel: 1
+
+#######################################################
+packages:
+  light:          !include light-nano-c6.yaml
+  switch:         !include switch-nano-c6.yaml
+  sensor:         !include sensor.yaml
+  button:         !include button.yaml
+  text_sensor:    !include text_sensor.yaml
+  binary_sensor:  !include binary_sensor-nano-c6.yaml
+#######################################################

@@ -1,0 +1,16 @@
+# Configuration of M5 Atom Lite onboard RGB LED
+light:
+  - platform: esp32_rmt_led_strip
+    rgb_order: GRB
+    pin: GPIO20
+    num_leds: 1
+    rmt_channel: 0
+    chipset: WS2812
+    is_rgbw: true
+    id: m5stack_led
+    name: "Light"
+    icon: "mdi:led-outline"
+    effects:
+      - random:
+      - flicker:
+      - addressable_rainbow:
