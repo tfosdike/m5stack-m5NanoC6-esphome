@@ -1,7 +1,7 @@
 substitutions:
   LOCATION: "room_name"
   name: "myhome_${LOCATION}"
-  friendly_name: "radar_${LOCATION}"
+  friendly_name: "myhome_${LOCATION}"
 
 <<: !include packages/generic_m5stack-nano-c6.yaml
 #######################################################
