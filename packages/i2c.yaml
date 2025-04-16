@@ -1,0 +1,20 @@
+i2c:
+  - id: i2c_bus
+    sda: GPIO2
+    scl: GPIO1
+    scan: true
+sensor:
+  - platform: bmp280_i2c
+    pressure:
+      name: "Pressure"
+    update_interval: 60s
+    i2c_id: i2c_bus
+    address: 0x76
+  - platform: sht4x
+    temperature:
+      name: "Temperature"
+    humidity:
+      name: "Relative Humidity"
+    i2c_id: i2c_bus
+    address: 0x44
+    update_interval: 60s
